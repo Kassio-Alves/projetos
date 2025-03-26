@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>lista de Compras</title>
+</head>
+<body>
+    <h2>Lista de Compras</h2>
+    <input type="text" id="itemInput" placeholder="Adicionar item">
+    <button onclick="adicionarItem()">Adicionar</button>
+    <ul id="listaCompras"></ul>
+    <script>
+    // Carregar a lista do localStorage ao iniciar a página
+    document.addEventListener("DOMContentLoaded", carregarLista);
+
+    function adicionarItem() {
+        let item = document.getElementById("itemInput").value.trim(); // Captura o valor do input e remove espaços extras
+        if (item === "") return; // Evita adicionar itens vazios
+        
+        let lista = JSON.parse(localStorage.getItem("minhaLista")) || []; // Recupera a lista do localStorage ou inicia vazia
+        lista.push(item); // Adiciona o novo item à lista
+        localStorage.setItem("minhaLista", JSON.stringify(lista)); // Salva a lista atualizada no localStorage
+        
+        document.getElementById("itemInput").value = ""; // Limpa o campo de input
+        carregarLista(); // Atualiza a exibição da lista
+    }
+
+    function carregarLista() {
+        let lista = JSON.parse(localStorage.getItem("minhaLista")) || []; // Recupera a lista salva
+        let listaHtml = document.getElementById("listaCompras");
+        listaHtml.innerHTML = ""; // Limpa a lista para evitar duplicação
+
+        lista.forEach(item => {
+            let li = document.createElement("li"); // Cria um novo elemento <li>
+            li.textContent = item; // Define o conteúdo do <li>
+            listaHtml.appendChild(li); // Adiciona o <li> à lista <ul>
+        });
+    }
+    </script>
+</body>
+</html>
