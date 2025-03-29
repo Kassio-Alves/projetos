@@ -16,8 +16,8 @@
     document.addEventListener("DOMContentLoaded", carregarLista);
 
     function adicionarItem() {
-        let item = document.getElementById("itemInput").value.trim(); // Captura o valor do input e remove espaços extras
-        if (item === "") return; // Evita adicionar itens vazios
+        let item = document.getElementById("itemInput").value.trim(); // Captura o valor do input e remove espaços extras e trim() remove espaços desnecessarios
+        if (item === "") return; // Evita adicionar itens vazios significa que se a variável item for uma string vazia (""), a função para imediatamente e não executa o restante do código.
         
         let lista = JSON.parse(localStorage.getItem("minhaLista")) || []; // Recupera a lista do localStorage ou inicia vazia
         lista.push(item); // Adiciona o novo item à lista
