@@ -32,7 +32,7 @@
         let listaHtml = document.getElementById("listaCompras");
         listaHtml.innerHTML = ""; // Limpa a lista para evitar duplicação
 
-        lista.forEach(item => {
+        lista.forEach(item => { //usa o método .forEach() para percorrer cada elemento do array lista e executar um bloco de código para cada item.
             let li = document.createElement("li"); // Cria um novo elemento <li>
             li.textContent = item; // Define o conteúdo do <li>
             listaHtml.appendChild(li); // Adiciona o <li> à lista <ul>
