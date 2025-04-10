@@ -1,0 +1,23 @@
+{
+  "name": "projetos",
+  "version": "1.0.0",
+  "main": "js.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kassio-Alves/projetos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kassio-Alves/projetos/issues"
+  },
+  "homepage": "https://github.com/Kassio-Alves/projetos#readme",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^4.1.3"
+  }
+}
